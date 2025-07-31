@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top" />
+  <style>
+    html,body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .item {
+      list-style: none;
+      background: #2F3574;
+      color: white;
+      color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Data Knitto</h3>
+  <div style=" margin-bottom: 10px;">
+    <? for (let item of data) { ?>
+    <li class="item">
+      <strong>
+        <?= item.kain ?>
+      </strong>
+      <div style="font-style: italic; color:white; font-size:14px; margin-top:4px">
+        <?= item.alias_id ?>
+      </div>
+    </li>
+    <? } ?>
+  </div>
+
+</body>
+<script>
+
+</script>
+
+</html>

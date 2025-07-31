@@ -1,0 +1,12 @@
+{
+  "name": "app-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "clasp push -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

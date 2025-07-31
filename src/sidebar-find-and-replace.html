@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <style>
+        input {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid gray;
+        }
+
+        button {
+            background-color: #2F3574;
+            color: white;
+            width: 100%;
+            border: none;
+            padding: 6px;
+            border-radius: 4px;
+            cursor:pointer;
+        }
+
+        #wrapper{
+            display:flex;
+            flex-direction: column;
+            row-gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Find and Replace</h2>
+    <div id="wrapper">
+        <input type="text" id="findText" placeholder="Find keyword" />
+        <input type="text" id="replaceText" placeholder="Replace with..." />
+        <button onclick="findAndReplace()">Replace All</button>
+    </div>
+    <div id="status"></div>
+    <div id="console-log"></div>
+</body>
+<script>
+    function findAndReplace() {
+        const find = document.getElementById("findText").value;
+        const replace = document.getElementById("replaceText").value;
+
+        if (!find) {
+            alert("Masukkan teks yang ingin dicari.");
+            return;
+        }
+
+        document.getElementById("status").innerText = "Sedang memproses...";
+
+        google.script.run
+            .withSuccessHandler(function (count) {
+                document.getElementById("console-log").innerText = JSON.stringify(count)
+                document.getElementById("status").innerText =
+                    `Selesai! ${count} kemunculan telah diganti.`;
+            })
+            .replaceTextInDocument(find, replace);
+    }
+</script>
+
+</html>
