@@ -26,6 +26,12 @@ Jika ingin logout:
 clasp logout
 ```
 
+
+## watch code
+```bash
+pnpm watch
+```
+
 ## 📤 Push Lokal ke Cloud
 ```bash
 clasp push
